@@ -3,7 +3,8 @@ layout: base_layout.hbs
 title: Main
 ---
 
-{%- for post in collections.post -%}
+{% assign posts = collections.post | reverse %}
+{%- for post in posts -%}
 <div>
 <h2>{{ post.data.title }}</h2>
 <p><em>{{ post.data.date | date: "%b %e, %Y"}}</em></p>
